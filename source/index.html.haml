@@ -1,0 +1,23 @@
+.top
+  .content
+    = image_tag 'logo.png'
+    .top-links
+      = link_to 'https://login.cityweb.de/impressum.html', 'IMPRESSUM'
+      = link_to 'https://login.cityweb.de/agb.html', 'AGB'
+      = link_to 'https://login.cityweb.de/datenschutz.html', 'DATENSCHUTZ'
+    .bottom-links
+      = link_to 'https://www.cityweb.de/', 'HOME'
+      = link_to 'https://login.cityweb.de/bestellprozess.html', 'REGISTRIEREN'
+      = link_to 'https://login.cityweb.de/sicherheit.html', 'SICHERHEIT'
+      = link_to 'https://login.cityweb.de/ueber-uns.html', 'ÜBER UNS'
+
+= form_tag '/login', name: 'login' do
+  .wrapper
+    = label_tag :email, caption: 'E-Mail-Adresse'
+    = email_field_tag :email, required: true, value: 'andrea.lettow@cityweb.de'
+  .wrapper
+    = label_tag :password, caption: 'Passwort'
+    = password_field_tag :password, required: true, autofocus: true
+  = submit_tag 'Anmelden'
+
+= image_tag 'bottom.png'
